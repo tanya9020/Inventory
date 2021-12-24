@@ -19,7 +19,7 @@
  <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
     <beanstalk.versionLabel>${maven.build.timestamp}</beanstalk.versionLabel>
     <beanstalk.applicationName>my application</beanstalk.applicationName>
-    <beanstalker.region>eu-west-1</beanstalker.region>
+    <beanstalker.region>ap-south-1</beanstalker.region>
     <beanstalk.cnamePrefix>my application</beanstalk.cnamePrefix>
 
 
