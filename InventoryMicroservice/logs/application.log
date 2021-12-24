@@ -1,0 +1,57 @@
+2021-Dec-14 14:06:46 WARN Unable to close ApplicationContext
+org.apache.logging.log4j.core.appender.AppenderLoggingException: An exception occurred processing Appender Mail
+	at org.apache.logging.log4j.core.appender.DefaultErrorHandler.error(DefaultErrorHandler.java:93) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.handleAppenderError(AppenderControl.java:165) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:158) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender0(AppenderControl.java:129) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppenderPreventRecursion(AppenderControl.java:120) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.callAppender(AppenderControl.java:84) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.callAppenders(LoggerConfig.java:540) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.processLogEvent(LoggerConfig.java:498) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:481) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.LoggerConfig.log(LoggerConfig.java:456) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AwaitCompletionReliabilityStrategy.log(AwaitCompletionReliabilityStrategy.java:82) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.Logger.log(Logger.java:161) [log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.tryLogMessage(AbstractLogger.java:2205) [log4j-api-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageTrackRecursion(AbstractLogger.java:2159) [log4j-api-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessageSafely(AbstractLogger.java:2142) [log4j-api-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logMessage(AbstractLogger.java:2017) [log4j-api-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.spi.AbstractLogger.logIfEnabled(AbstractLogger.java:1983) [log4j-api-2.14.1.jar:2.14.1]
+	at org.apache.commons.logging.LogAdapter$Log4jLog.log(LogAdapter.java:263) [spring-jcl-5.3.13.jar:5.3.13]
+	at org.apache.commons.logging.LogAdapter$Log4jLog.error(LogAdapter.java:215) [spring-jcl-5.3.13.jar:5.3.13]
+	at org.springframework.boot.SpringApplication.reportFailure(SpringApplication.java:819) ~[spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:784) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) [spring-boot-2.6.1.jar:2.6.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) [spring-boot-2.6.1.jar:2.6.1]
+	at com.inventory.api.DemoApplication.main(DemoApplication.java:15) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:567) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.6.1.jar:2.6.1]
+Caused by: org.apache.logging.log4j.LoggingException: Error occurred while sending email
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:178) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:352) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:156) ~[log4j-core-2.14.1.jar:2.14.1]
+	... 27 more
+Caused by: javax.mail.AuthenticationFailedException: 534-5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbv
+534-5.7.14 gH6y3IDtEz4XcbWgyyPElsno3e2cBnwAaf1KUDCfvzJ2FwwGe3UODjiNorKhpevX-Kjyw
+534-5.7.14 WbljawUxFBVE8S8Kx-q0gZuiQPHmEoWoKoR8P2E7jmmMLGfuk3R66GmtwkzfRhbk>
+534-5.7.14 Please log in via your web browser and then try again.
+534-5.7.14  Learn more at
+534 5.7.14  https://support.google.com/mail/answer/78754 s28sm16629528pfg.147 - gsmtp
+
+	at com.sun.mail.smtp.SMTPTransport$Authenticator.authenticate(SMTPTransport.java:965) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.authenticate(SMTPTransport.java:876) ~[javax.mail-1.6.2.jar:1.6.2]
+	at com.sun.mail.smtp.SMTPTransport.protocolConnect(SMTPTransport.java:780) ~[javax.mail-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:388) ~[javax.mail-api-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:246) ~[javax.mail-api-1.6.2.jar:1.6.2]
+	at javax.mail.Service.connect(Service.java:195) ~[javax.mail-api-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send0(Transport.java:254) ~[javax.mail-api-1.6.2.jar:1.6.2]
+	at javax.mail.Transport.send(Transport.java:124) ~[javax.mail-api-1.6.2.jar:1.6.2]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendMultipartMessage(SmtpManager.java:260) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.net.SmtpManager.sendEvents(SmtpManager.java:175) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.appender.SmtpAppender.append(SmtpAppender.java:352) ~[log4j-core-2.14.1.jar:2.14.1]
+	at org.apache.logging.log4j.core.config.AppenderControl.tryCallAppender(AppenderControl.java:156) ~[log4j-core-2.14.1.jar:2.14.1]
+	... 27 more
