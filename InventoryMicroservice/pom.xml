@@ -15,6 +15,14 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+
+ <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+    <beanstalk.versionLabel>${maven.build.timestamp}</beanstalk.versionLabel>
+    <beanstalk.applicationName>my application</beanstalk.applicationName>
+    <beanstalker.region>eu-west-1</beanstalker.region>
+    <beanstalk.cnamePrefix>my application</beanstalk.cnamePrefix>
+
+
 	</properties>
 	<dependencies>
 
@@ -165,6 +173,19 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+<plugin>
+    <groupId>br.com.ingenieux</groupId>
+    <artifactId>beanstalk-maven-plugin</artifactId>
+    <version>1.5.0</version>
+    <configuration>
+        <s3Bucket>my-application-bucket-live</s3Bucket>
+        <s3Key>${project.artifactId}/${project.build.finalName}-${maven.build.timestamp}.jar</s3Key>
+        <applicationName>my application</applicationName>
+        <environmentName>my-application-live</environmentName>
+        <environmentRef>my-application-live</environmentRef>
+    </configuration>
+</plugin>
+
 		</plugins>
 	</build>
 
